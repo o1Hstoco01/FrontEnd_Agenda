@@ -1,1 +1,24 @@
-<p>agenda works!</p>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Compromisso</th>
+        <th scope="col">Data</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Local</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let agendas of agendas">
+          <th>{{agendas.id}}</th>
+          <td><a [routerLink]="['/agendas', agendas.id]">{{agendas.compromisso}}</a></td>
+          <td>{{agendas.data}}</td>
+          <td>{{agendas.horario}}</td>
+          <td>{{agendas.local}}</td>
+          <td><button class="btn btn-danger" (click)="delete(agendas)">Remover</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary"(click)="create()">Cadastrar</button>
+</div>

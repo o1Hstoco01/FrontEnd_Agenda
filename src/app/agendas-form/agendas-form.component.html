@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>Inserir Agenda</h3>
+  <form [formGroup]="formGroupAgendas">
+    <div class="mb-3">
+      <label for="compromisso" class="form-label">Comprimisso</label>
+      <input formControlName="compromisso" type="text " class="form-control" id="compromisso" placeholder="Digite seu Compromisso">
+    </div>
+    <div class="mb-3">
+      <label for="data" class="form-label">Data</label>
+      <input formControlName="data" type="text " class="form-control" id="data" placeholder="Digite a data">
+    </div>
+    <div class="mb-3">
+      <label for="horario" class="form-label">Horario</label>
+      <input formControlName="horario" type="text " class="form-control" id="horario" placeholder="Digite o horario">
+    </div>
+    <div class="mb-3">
+      <label for="local" class="form-label">Local</label>
+      <input formControlName="local" type="text " class="form-control" id="local" placeholder="Digite o local">
+    </div>
+    <button *ngIf="isEditing" type="button" class="btn btn-primary" (click)="update()">Alterar</button>
+
+    <button *ngIf="!isEditing" type="button" class="btn btn-primary" (click)="save()">Agendar</button>
+  </form>
+</div>
